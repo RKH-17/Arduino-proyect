@@ -18,4 +18,4 @@ resis = map(sensorValue, 0,1023,0,180); // sensorValue = la resistencia los prim
 Serial.println(resis);
 }
 
-
+IMG_5653.jpeg
