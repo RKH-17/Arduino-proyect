@@ -1,0 +1,21 @@
+#include <Servo.h>
+Servo servoBase;
+
+int sensorValue = 0; // El valor del sensor esta en 0
+int resis; // VARIABLE DEL POTENCIOMETRO
+
+void setup(){
+
+servoBase.attach(9);
+ Serial.begin(9600); // mas uso de bit
+
+}
+
+void loop(){
+
+sensorValue = analogRead(A0); // LEE EL A0 DONDE SE CONENCTA EL POTENCOIOMETRO Y ESTA EN CERO
+resis = map(sensorValue, 0,1023,0,180); // sensorValue = la resistencia los primero dos numeros son la capacidad de la resistencia de 0 y llega a un limited de 1023 y los otros dos numeros es el cambio que en vez diga la resistencia diga el angulo para ver los angulos que llega cambiando la resitenia.
+Serial.printIn(resis);
+}
+
+
