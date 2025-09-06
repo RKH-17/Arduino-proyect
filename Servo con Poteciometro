@@ -14,7 +14,7 @@ servoBase.attach(9);
 void loop(){
 
 sensorValue = analogRead(A0); // LEE EL A0 DONDE SE CONENCTA EL POTENCOIOMETRO Y ESTA EN CERO
-resis = map(sensorValue, 0,1023,0,180); // sensorValue = la resistencia los primero dos numeros son la capacidad de la resistencia de 0 y llega a un limited de 1023 y los otros dos numeros es el cambio que en vez diga la resistencia diga el angulo para ver los angulos que llega cambiando la resitenia.
+resis = map(sensorValue, 0,1023,0,180); // sensorValue = la resistencia los primero dos numeros son la capacidad de la resistencia de 0 y llega a un limited de 1023 kohm y los otros dos numeros es el cambio que en vez diga la resistencia diga el angulo para ver los angulos que llega cambiando la resitenia.
 Serial.println(resis);
 }
 
