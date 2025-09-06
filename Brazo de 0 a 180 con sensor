@@ -1,0 +1,29 @@
+#include <Servo.h>
+Servo servoBase;
+
+//variables
+int pos = 0; //pos es para el angulo 0
+int sensor;
+
+void setup(){
+pinMode(3,INPUT); //LA ENTRADA 3 ES PARA EL SENSOR
+servoBase.attach(9); // Para el pin del servo motor
+servoBase.write(pos); //Hacemos que el servo este en 0 desde el principio
+}
+
+void loop(){
+sensor = digitalRead(3); // lee el pin 3
+
+if (sensor==LOW){
+  servoBase.detach(); // detach hace que ejecute independientemente
+}
+else{
+servoBase.attach(9); //Servo ejecute
+servoBase.write(pos); // y lea que esta en 0
+pos = pos + 1; //CONTADOR QUE SEPA QUE DE 0 VAYA SUMANDO UNO PARA LLEGAR AL 180.
+delay(30);
+}
+ if (pos == 180){ // si llega a 180 baja a cero repitiendo todo
+ pos = 0 ;
+ }
+ }
